@@ -20,21 +20,21 @@ export default function HomePage() {
 
   const heroSlides = [
     {
-      image: "/placeholder.svg?height=800&width=1200",
+      image: "/images/bg.jpg",
       title: "Welcome to Dominion City Works Layout",
       subtitle: "Greatness Centre",
       description:
         "A place where lives are transformed, communities are built, and greatness is cultivated through faith, love, and service.",
     },
     {
-      image: "/placeholder.svg?height=800&width=1200",
+      image: "/images/bg2.jpg",
       title: "Building Strong Communities",
       subtitle: "Together We Rise",
       description:
         "Join us in creating lasting impact through our community development programs and outreach initiatives.",
     },
     {
-      image: "/placeholder.svg?height=800&width=1200",
+      image: "/images/bg3.jpg",
       title: "Developing Leaders",
       subtitle: "Leadership Excellence",
       description:
@@ -45,25 +45,25 @@ export default function HomePage() {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      role: "Community Member",
+      name: "Mario",
+      role: "Youth",
       content:
         "Dominion City has been a blessing to our family. The love and support we've received here is incredible.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/images/mario.jpg",
     },
     {
       id: 2,
-      name: "Michael Adebayo",
-      role: "Youth Leader",
+      name: "wisdom ugochukwu",
+      role: "Youth Drummer",
       content: "The youth programs here have helped me discover my purpose and develop my leadership skills.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/images/wisdom.jpg",
     },
     {
       id: 3,
-      name: "Grace Okafor",
+      name: "Min E berry Akalonu",
       role: "Women's Ministry",
       content: "The women's ministry has been instrumental in my spiritual growth and personal development.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/images/maeberry.jpeg",
     },
   ]
 
@@ -259,18 +259,12 @@ export default function HomePage() {
                   <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
                     <span className="font-semibold text-sm sm:text-base">First Service</span>
                     <Badge variant="secondary" className="text-xs sm:text-sm">
-                      8:00 AM
+                      7:30 AM
                     </Badge>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
                     <span className="font-semibold text-sm sm:text-base">Main Service</span>
-                    <Badge className="bg-blue-600 text-xs sm:text-sm">10:30 AM</Badge>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
-                    <span className="font-semibold text-sm sm:text-base">Evening Service</span>
-                    <Badge variant="secondary" className="text-xs sm:text-sm">
-                      6:00 PM
-                    </Badge>
+                    <Badge className="bg-blue-600 text-xs sm:text-sm">10:00 AM</Badge>
                   </div>
                 </div>
                 <Button className="w-full group-hover:bg-blue-700 transition-colors touch-manipulation" asChild>
@@ -375,85 +369,85 @@ export default function HomePage() {
           <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: "Youth Conference 2024",
-                date: "March 15-17, 2024",
-                time: "6:00 PM - 9:00 PM",
-                location: "Main Auditorium",
-                category: "Youth",
-                image: "/placeholder.svg?height=250&width=400",
-                description: "A transformative weekend for young people to encounter God and discover their purpose.",
-                featured: true,
-                attendees: 150,
+              title: "Movie Night",
+              date: "july 10, 2025",
+              time: "5:00 PM - 9:00 PM",
+              location: "Main Auditorium",
+              category: "Social",
+              image: "/images/movienight.jpg",
+              description: "Join us for a fun-filled evening with friends and family as we watch an inspiring movie together. Snacks and drinks will be provided. All are welcome!",
+              featured: true,
+              attendees: 150,
               },
               {
-                title: "Community Outreach",
-                date: "March 22, 2024",
-                time: "9:00 AM - 3:00 PM",
-                location: "Community Center",
-                category: "Outreach",
-                image: "/placeholder.svg?height=250&width=400",
-                description: "Join us as we serve our local community with food distribution and health screenings.",
-                attendees: 200,
+              title: "Supernatural Advancements",
+              date: "All Tuesdays In july",
+              time: "4:00 PM - 8:30 PM",
+              location: "Jesus Arena, PH Road, Owerri, Imo state",
+              category: "training",
+              image: "/images/tuesday.jpg",
+              description: "Join us as we impact knowledge about the Divine Nature to you. Experience powerful teachings, worship, and impartation every Tuesday this July.",
+              attendees: 500,
               },
               {
-                title: "Leadership Training",
-                date: "March 29, 2024",
-                time: "10:00 AM - 4:00 PM",
-                location: "Conference Room",
-                category: "Training",
-                image: "/placeholder.svg?height=250&width=400",
-                description: "Develop your leadership skills and learn how to make a greater impact.",
-                attendees: 75,
+              title: "Mid Year Thanksgiving",
+              date: "july 13, 2025",
+              time: "8:00 AM - 12:00 PM",
+              location: "Church Auditorium",
+              category: "Thanksgiving service",
+              image: "/images/bg3.jpg",
+              description: "Come celebrate God's faithfulness with us at our Mid Year Thanksgiving service. Let's give thanks together for all He has done so far this year.",
+              attendees: 600,
               },
             ].map((event, index) => (
               <Card
-                key={index}
-                className="overflow-hidden hover:shadow-xl transition-all duration-500 group border-0 shadow-lg"
+              key={index}
+              className="overflow-hidden hover:shadow-xl transition-all duration-500 group border-0 shadow-lg"
               >
-                <div className="relative">
-                  <Image
-                    src={event.image || "/placeholder.svg"}
-                    alt={event.title}
-                    width={400}
-                    height={250}
-                    className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  {event.featured && <Badge className="absolute top-4 left-4 bg-red-600 animate-pulse">Featured</Badge>}
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <div className="flex items-center gap-2 text-sm">
-                      <Users className="w-4 h-4" />
-                      <span>{event.attendees} attending</span>
-                    </div>
-                  </div>
+              <div className="relative">
+                <Image
+                src={event.image || "/images/bg.jpg"}
+                alt={event.title}
+                width={400}
+                height={250}
+                className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                {event.featured && <Badge className="absolute top-4 left-4 bg-red-600 animate-pulse">Featured</Badge>}
+                <div className="absolute bottom-4 left-4 text-white">
+                <div className="flex items-center gap-2 text-sm">
+                  <Users className="w-4 h-4" />
+                  <span>{event.attendees} attending</span>
                 </div>
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="text-lg sm:text-xl group-hover:text-blue-600 transition-colors">
-                      {event.title}
-                    </CardTitle>
-                    <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200 text-xs">
-                      {event.category}
-                    </Badge>
-                  </div>
-                  <CardDescription className="space-y-2">
-                    <div className="flex items-center gap-2 text-sm">
-                      <Calendar className="w-4 h-4 text-blue-600" />
-                      <span>{event.date}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm">
-                      <Clock className="w-4 h-4 text-green-600" />
-                      <span>{event.time}</span>
-                    </div>
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">{event.description}</p>
-                  <Button className="w-full group-hover:bg-blue-700 transition-colors touch-manipulation">
-                    Register Now
-                  </Button>
-                </CardContent>
+                </div>
+              </div>
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                <CardTitle className="text-lg sm:text-xl group-hover:text-blue-600 transition-colors">
+                  {event.title}
+                </CardTitle>
+                <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200 text-xs">
+                  {event.category}
+                </Badge>
+                </div>
+                <CardDescription className="space-y-2">
+                <div className="flex items-center gap-2 text-sm">
+                  <Calendar className="w-4 h-4 text-blue-600" />
+                  <span>{event.date}</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <Clock className="w-4 h-4 text-green-600" />
+                  <span>{event.time}</span>
+                </div>
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">{event.description}</p>
+                <Button className="w-full group-hover:bg-blue-700 transition-colors touch-manipulation">
+                Register Now
+                </Button>
+              </CardContent>
               </Card>
             ))}
           </div>

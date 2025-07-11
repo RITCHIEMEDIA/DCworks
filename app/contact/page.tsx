@@ -26,7 +26,7 @@ export default function ContactPage() {
   const churchLocation = {
     lat: 5.484,
     lng: 7.0351,
-    address: "97 Works Layout, Owerri Municipal, Owerri, Imo State, Nigeria",
+    address: "cradle hotel works layout, Owerri Municipal, Owerri, Imo State, Nigeria",
   }
 
   useEffect(() => {
@@ -512,42 +512,42 @@ export default function ContactPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                name: "Pastor John Adebayo",
+                name: "Pastor Uzone   Akalonu",
                 title: "Senior Pastor",
                 email: "pastor@dominioncity.org",
                 phone: "+234 803 123 4570",
                 hours: "Tue-Thu, 10AM-4PM",
               },
               {
-                name: "Pastor Grace Adebayo",
+                name: "Pastor E-Berry Akalonu",
                 title: "Associate Pastor",
                 email: "grace@dominioncity.org",
                 phone: "+234 803 123 4571",
                 hours: "Mon, Wed, Fri, 9AM-3PM",
               },
               {
-                name: "Pastor David Okafor",
+                name: "Pastor Elijah",
                 title: "Youth Pastor",
                 email: "youth@dominioncity.org",
                 phone: "+234 803 123 4572",
                 hours: "Mon-Fri, 2PM-6PM",
               },
               {
-                name: "Mrs. Sarah Johnson",
+                name: "Mrs. Divine",
                 title: "Church Administrator",
                 email: "admin@dominioncity.org",
                 phone: "+234 803 123 4573",
                 hours: "Mon-Fri, 9AM-5PM",
               },
               {
-                name: "Michael Thompson",
+                name: "MIN Precious",
                 title: "Worship Leader",
                 email: "worship@dominioncity.org",
                 phone: "+234 803 123 4574",
                 hours: "Wed-Sun, 10AM-2PM",
               },
               {
-                name: "Mrs. Ruth Okonkwo",
+                name: "EL Shiphra",
                 title: "Children's Director",
                 email: "children@dominioncity.org",
                 phone: "+234 803 123 4575",
