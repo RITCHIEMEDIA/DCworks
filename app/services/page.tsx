@@ -200,8 +200,14 @@ export default function ServicesPage() {
                   <div>
                     <h4 className="font-semibold">Address</h4>
                     <p className="text-gray-600">
+<<<<<<< HEAD
  cradle Hotel, works layout, Owerri municipal                       <br />
                       Imo State, Nigeria
+=======
+                      cradle Hotel, works layout, Owerri municipal 
+                      <br />
+                      IMO State, Nigeria
+>>>>>>> 4f0fd95a477bba8160278780862306cfd82996ad
                     </p>
                   </div>
                   <div>
