@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://dominioncityworks.org"
+  const baseUrl = "https://dcworkslayout.vercel.app"
 
   // Static pages
   const staticPages = [

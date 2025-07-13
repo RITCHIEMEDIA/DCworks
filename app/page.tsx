@@ -20,21 +20,21 @@ export default function HomePage() {
 
   const heroSlides = [
     {
-      image: "/images/bg.jpg",
+      image: "/images/wal1.jpg",
       title: "Welcome to Dominion City Works Layout",
       subtitle: "Greatness Centre",
       description:
         "A place where lives are transformed, communities are built, and greatness is cultivated through faith, love, and service.",
     },
     {
-      image: "/images/bg2.jpg",
+      image: "/images/wal2.jpg",
       title: "Building Strong Communities",
       subtitle: "Together We Rise",
       description:
         "Join us in creating lasting impact through our community development programs and outreach initiatives.",
     },
     {
-      image: "/images/bg3.jpg",
+      image: "/images/wal3.jpg",
       title: "Developing Leaders",
       subtitle: "Leadership Excellence",
       description:
@@ -481,7 +481,7 @@ export default function HomePage() {
             {[
               {
                 title: "Walking in Your Purpose",
-                speaker: "Pastor John Adebayo",
+                speaker: "pastor Uzone Akalonu",
                 date: "March 10, 2024",
                 duration: "45 min",
                 series: "Discovering God's Plan",

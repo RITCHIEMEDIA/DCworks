@@ -1,7 +1,5 @@
 "use client"
-
-import type React from "react"
-
+import React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -10,44 +8,78 @@ import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Heart, Shield, CreditCard, Repeat } from "lucide-react"
-import { paymentService, type PaymentData } from "@/lib/payment"
+
+const PAYSTACK_PUBLIC_KEY = "pk_live_b05f0719d9db42e8fa558bf037ba2bad032be964"
 
 export default function GivingPage() {
   const [amount, setAmount] = useState("")
   const [frequency, setFrequency] = useState("one-time")
   const [fund, setFund] = useState("general")
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // Load Paystack script if not already loaded
+  React.useEffect(() => {
+    if (!document.getElementById("paystack-js")) {
+      const script = document.createElement("script")
+      script.id = "paystack-js"
+      script.src = "https://js.paystack.co/v1/inline.js"
+      script.async = true
+      document.body.appendChild(script)
+    }
+  }, [])
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
-    if (!amount || Number.parseFloat(amount.replace(/[^\d]/g, "")) < 100) {
+    const numericAmount = Number.parseFloat(amount.replace(/[^\d]/g, ""))
+    if (!amount || numericAmount < 100) {
       alert("Minimum donation amount is ₦100")
       return
     }
-
-    const paymentData: PaymentData = {
-      amount: Number.parseFloat(amount.replace(/[^\d]/g, "")),
-      email: "donor@example.com", // This should come from a form field
-      name: "Anonymous Donor", // This should come from a form field
-      phone: "+2348000000000", // This should come from a form field
-      fund,
-      frequency,
-      reference: paymentService.generateReference(),
+    if (!name || !email || !phone) {
+      alert("Please fill all donor details")
+      return
     }
 
-    try {
-      const result = await paymentService.initializePaystackPayment(paymentData)
+    const handler = (window as any).PaystackPop.setup({
+      key: PAYSTACK_PUBLIC_KEY,
+      email,
+      amount: numericAmount * 100, // Paystack expects amount in kobo
+      currency: "NGN",
+      ref: `${Date.now()}-${Math.floor(Math.random() * 10000)}`,
+      metadata: {
+        custom_fields: [
+          { display_name: "Donor Name", variable_name: "donor_name", value: name },
+          { display_name: "Phone", variable_name: "donor_phone", value: phone },
+          { display_name: "Fund", variable_name: "fund", value: fund },
+          { display_name: "Frequency", variable_name: "frequency", value: frequency },
+        ],
+      },
+      callback: function (response: any) {
+        alert("Payment complete! Reference: " + response.reference)
 
-      if (result.success && result.authorization_url) {
-        // Redirect to payment page
-        window.location.href = result.authorization_url
-      } else {
-        alert(result.message || "Payment initialization failed")
-      }
-    } catch (error) {
-      console.error("Payment error:", error)
-      alert("An error occurred. Please try again.")
-    }
+        // Example call after Paystack callback
+        fetch("/api/verify-paystack-payment", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ reference: response.reference }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.success) {
+              // Show thank you, save to DB, etc.
+            } else {
+              // Handle error
+            }
+          })
+      },
+      onClose: function () {
+        alert("Payment window closed")
+      },
+    })
+    handler.openIframe()
   }
 
   return (
@@ -82,39 +114,60 @@ export default function GivingPage() {
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div>
                       <Label htmlFor="donor-name">Full Name</Label>
-                      <Input id="donor-name" placeholder="Enter your full name" required />
+                      <Input
+                        id="donor-name"
+                        placeholder="Enter your full name"
+                        required
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                      />
                     </div>
                     <div>
                       <Label htmlFor="donor-email">Email Address</Label>
-                      <Input id="donor-email" type="email" placeholder="Enter your email" required />
+                      <Input
+                        id="donor-email"
+                        type="email"
+                        placeholder="Enter your email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
                     </div>
                   </div>
                   <div>
                     <Label htmlFor="donor-phone">Phone Number</Label>
-                    <Input id="donor-phone" type="tel" placeholder="+234 800 000 0000" required />
+                    <Input
+                      id="donor-phone"
+                      type="tel"
+                      placeholder="+234 800 000 0000"
+                      required
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                    />
                   </div>
 
                   {/* Amount Selection */}
                   <div>
                     <Label className="text-base font-semibold">Donation Amount</Label>
                     <div className="grid grid-cols-3 gap-2 mt-2 mb-4">
-                      {["₦5,000", "₦10,000", "₦25,000", "₦50,000", "₦100,000", "Other"].map((preset) => (
+                      {["5000", "10000", "25000", "50000", "100000", "Other"].map((preset) => (
                         <Button
                           key={preset}
                           type="button"
                           variant={amount === preset ? "default" : "outline"}
-                          onClick={() => setAmount(preset)}
+                          onClick={() => setAmount(preset === "Other" ? "" : preset)}
                           className="text-sm"
                         >
-                          {preset}
+                          {preset === "Other" ? "Other" : `₦${Number(preset).toLocaleString()}`}
                         </Button>
                       ))}
                     </div>
                     <Input
                       type="number"
                       placeholder="Enter custom amount"
-                      value={amount === "Other" ? "" : amount.replace("₦", "").replace(",", "")}
+                      value={amount}
                       onChange={(e) => setAmount(e.target.value)}
+                      min={100}
                     />
                   </div>
 
@@ -250,19 +303,19 @@ export default function GivingPage() {
               <CardContent>
                 <div className="space-y-2 text-sm">
                   <p>
-                    <strong>Bank:</strong> First Bank of Nigeria
+                    <strong>Bank:</strong> United Bank Of Africa
                   </p>
                   <p>
                     <strong>Account Name:</strong> Dominion City Works Layout
                   </p>
                   <p>
-                    <strong>Account Number:</strong> 1234567890
+                    <strong>Account Number:</strong> 2326825992
                   </p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="text-center">
+            {/* <Card className="text-center">
               <CardHeader>
                 <CardTitle>Mobile Money</CardTitle>
               </CardHeader>
@@ -279,7 +332,7 @@ export default function GivingPage() {
                   </p>
                 </div>
               </CardContent>
-            </Card>
+            </Card> */}
 
             <Card className="text-center">
               <CardHeader>
@@ -290,7 +343,7 @@ export default function GivingPage() {
                   <p>Give during any of our worship services</p>
                   <p>Visit our church office during business hours</p>
                   <p>
-                    <strong>Office Hours:</strong> Mon-Fri, 9AM-5PM
+                    <strong>Office Hours:</strong> Mon-Fri, 8AM-5PM
                   </p>
                 </div>
               </CardContent>
@@ -321,15 +374,15 @@ export default function GivingPage() {
                 </p>
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
-                    <div className="text-2xl font-bold text-blue-600">500+</div>
+                    <div className="text-2xl font-bold text-blue-600">50+</div>
                     <div className="text-sm text-gray-600">Families Fed</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-green-600">50</div>
+                    <div className="text-2xl font-bold text-green-600">10</div>
                     <div className="text-sm text-gray-600">Scholarships</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-red-600">1,000+</div>
+                    <div className="text-2xl font-bold text-red-600">100+</div>
                     <div className="text-sm text-gray-600">Medical Checkups</div>
                   </div>
                 </div>
@@ -351,12 +404,12 @@ export default function GivingPage() {
                     <div className="text-sm text-gray-600">New Programs</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-orange-600">2,000+</div>
+                    <div className="text-2xl font-bold text-orange-600">100+</div>
                     <div className="text-sm text-gray-600">Members</div>
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-teal-600">3</div>
-                    <div className="text-sm text-gray-600">Church Plants</div>
+                    <div className="text-sm text-gray-600">Fellowship Cell Plants</div>
                   </div>
                 </div>
               </CardContent>

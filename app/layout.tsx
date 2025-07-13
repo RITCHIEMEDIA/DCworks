@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "Dominion City",
   },
-    generator: 'v0.dev'
+    generator: 'Ritchietech.vercel.app'
 }
 
 export default function RootLayout({
@@ -37,18 +37,18 @@ export default function RootLayout({
     name: "Dominion City Works Layout - Greatness Centre",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "97 Works Layout",
+      streetAddress: "Cradle Event hall, Works Layout owerri",
       addressLocality: "Owerri Municipal",
       addressRegion: "Imo State",
       addressCountry: "Nigeria",
     },
-    telephone: "+234-803-123-4567",
-    email: "info@dominioncity.org",
-    url: "https://dominioncity.org",
+    telephone: "+234-812-511-9785",
+    email: "dominioncityworkslayout@gmail.com",
+    url: "https://dcworkslayout.vercel.app",
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "5.4840",
-      longitude: "7.0351",
+      latitude: "5.4966° N",
+      longitude: "7.0353° E",
     },
   }
 
@@ -60,8 +60,8 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/image.jpg" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/image.jpg" />
         <Script
           id="structured-data"
           type="application/ld+json"

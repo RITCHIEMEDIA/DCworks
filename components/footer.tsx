@@ -122,18 +122,18 @@ export function Footer() {
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-gray-400" />
                 <div className="text-gray-400">
-                  <div>97 Works Layout</div>
+                  <div>Cradle Event Hall, Cradle Hotel</div>
                   <div>Owerri Municipal, Owerri</div>
                   <div>Imo State, Nigeria</div>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-gray-400" />
-                <span className="text-gray-400">+234 803 123 4567</span>
+                <span className="text-gray-400">+234 812 511 9785</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-gray-400" />
-                <span className="text-gray-400">info@dominioncity.org</span>
+                <span className="text-gray-400">dominioncityworkslayout@gmail.com</span>
               </div>
             </div>
           </div>

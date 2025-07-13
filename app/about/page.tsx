@@ -8,32 +8,32 @@ import { ParallaxSection } from "@/components/ui/parallax-section"
 export default function AboutPage() {
   const timelineEvents = [
     {
-      year: "2010",
+      year: "2023",
       title: "Church Founded",
       description: "Started with 20 members in a rented hall with a vision to transform lives and build communities.",
     },
+    // {
+    //   year: "2013",
+    //   title: "First Building",
+    //   description: "Acquired our first permanent building and expanded to 200 members.",
+    // },
+    // {
+    //   year: "2016",
+    //   title: "Greatness Centre Launch",
+    //   description: "Launched community development programs and leadership training initiatives.",
+    // },
     {
-      year: "2013",
-      title: "First Building",
-      description: "Acquired our first permanent building and expanded to 200 members.",
-    },
-    {
-      year: "2016",
+      year: "2024",
       title: "Greatness Centre Launch",
-      description: "Launched community development programs and leadership training initiatives.",
+      description: "Started the J&E Initiative training institute, impacting the lives of youths.",
     },
     {
-      year: "2019",
-      title: "Major Expansion",
-      description: "Built new auditorium and reached 1,000+ members with multiple service times.",
-    },
-    {
-      year: "2022",
+      year: "2025",
       title: "Community Impact",
       description: "Launched major outreach programs serving over 500 families annually.",
     },
     {
-      year: "2024",
+      year: "2025",
       title: "Digital Ministry",
       description: "Expanded online presence and launched digital discipleship programs.",
     },
@@ -75,12 +75,12 @@ export default function AboutPage() {
               <h2 className="text-4xl font-bold mb-6 gradient-text">Our Story</h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p className="text-lg">
-                  Dominion City Works Layout was founded in 2010 with a vision to create a community where people could
+                  Dominion City Works Layout was founded in 2023 with a vision to create a community where people could
                   experience God's love, discover their purpose, and make a meaningful impact in the world.
                 </p>
                 <p>
                   What started as a small gathering of 20 people in a rented hall has grown into a thriving community of
-                  over 2,000 members. Our journey has been marked by God's faithfulness and the dedication of countless
+                  over 500 members. Our journey has been marked by God's faithfulness and the dedication of countless
                   individuals who have contributed to building this great work.
                 </p>
                 <p>
@@ -90,15 +90,15 @@ export default function AboutPage() {
               </div>
               <div className="mt-8 grid grid-cols-3 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">14+</div>
+                  <div className="text-3xl font-bold text-blue-600">2+</div>
                   <div className="text-sm text-gray-600">Years of Ministry</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600">2000+</div>
+                  <div className="text-3xl font-bold text-green-600">500+</div>
                   <div className="text-sm text-gray-600">Members</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">500+</div>
+                  <div className="text-3xl font-bold text-purple-600">50+</div>
                   <div className="text-sm text-gray-600">Families Served</div>
                 </div>
               </div>
@@ -106,14 +106,14 @@ export default function AboutPage() {
             <div className="animate-slideInRight">
               <div className="relative">
                 <Image
-                  src="/placeholder.svg?height=500&width=600"
+                  src="/images/pee.jpg"
                   alt="Church history"
                   width={600}
                   height={500}
                   className="rounded-2xl shadow-2xl hover-lift"
                 />
                 <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl animate-float">
-                  Est. 2010
+                  Est. 2023
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@ export default function AboutPage() {
         <section
           className="py-20 parallax-bg relative"
           style={{
-            backgroundImage: "url('/placeholder.svg?height=600&width=1200')",
+            backgroundImage: "url('/images/image.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-blue-900/90"></div>

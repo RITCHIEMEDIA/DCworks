@@ -200,9 +200,8 @@ export default function ServicesPage() {
                   <div>
                     <h4 className="font-semibold">Address</h4>
                     <p className="text-gray-600">
-                      123 Church Street
-                      <br />
-                      Lagos, Nigeria
+ cradle Hotel, works layout, Owerri municipal                       <br />
+                      Imo State, Nigeria
                     </p>
                   </div>
                   <div>

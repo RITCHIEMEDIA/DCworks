@@ -29,36 +29,36 @@ export function SocialMediaFeed() {
         platform: "facebook",
         content:
           'Join us this Sunday for an inspiring message on "Walking in Your Purpose". Service starts at 10:30 AM! 🙏 #DominionCity #SundayService',
-        image: "/placeholder.svg?height=300&width=500",
+        image: "/images/mins.jpg",
         likes: 45,
         comments: 12,
         shares: 8,
         timestamp: "2024-03-15T10:00:00Z",
-        url: "https://facebook.com/dominioncity",
+        url: "https://web.facebook.com/profile.php?id=61552525027917s",
       },
       {
         id: "2",
         platform: "instagram",
         content:
-          "Amazing turnout at our Youth Conference! 🎉 So proud of our young leaders stepping into their destiny. #YouthConference #NextGeneration",
-        image: "/placeholder.svg?height=300&width=500",
+          "Amazing turnout at our Thanksgiving Service! 🎉 Thank you to everyone who joined us in celebrating God's goodness. Swipe to see more moments from the day! #DominionCity #Thanksgiving",
+        image: "/images/uz.jpg?height=300&width=500",
         likes: 78,
         comments: 23,
         shares: 15,
         timestamp: "2024-03-14T16:30:00Z",
-        url: "https://instagram.com/dominioncity",
+        url: "https://instagram.com/dc_workslayout",
       },
-      {
-        id: "3",
-        platform: "twitter",
-        content:
-          "Prayer changes everything! Join our Wednesday evening prayer meeting at 7 PM. Together we can move mountains! 🏔️ #Prayer #Faith",
-        likes: 32,
-        comments: 8,
-        shares: 12,
-        timestamp: "2024-03-13T14:15:00Z",
-        url: "https://twitter.com/dominioncity",
-      },
+      // {
+      //   id: "3",
+      //   platform: "twitter",
+      //   content:
+      //     "Prayer changes everything! Join our Wednesday evening prayer meeting at 7 PM. Together we can move mountains! 🏔️ #Prayer #Faith",
+      //   likes: 32,
+      //   comments: 8,
+      //   shares: 12,
+      //   timestamp: "2024-03-13T14:15:00Z",
+      //   url: "https://twitter.com/dominioncity",
+      // },
     ]
     setPosts(mockPosts)
   }, [])
@@ -70,22 +70,43 @@ export function SocialMediaFeed() {
       case "instagram":
         return "bg-gradient-to-r from-purple-600 to-pink-600"
       case "twitter":
-        return "bg-sky-500"
+        return "bg-sky-1000"
       default:
         return "bg-gray-600"
+    }
+  }
+
+  const getPlatformText = (platform: string) => {
+    switch (platform) {
+      case "facebook":
+        return "Facebook"
+      case "instagram":
+        return "Instagram"
+      case "twitter":
+        return "Twitter"
+      default:
+        return "Unknown"
     }
   }
 
   const getPlatformIcon = (platform: string) => {
     switch (platform) {
       case "facebook":
-        return "f"
+        return (
+          <span className="font-bold text-lg">f</span>
+        )
       case "instagram":
-        return "ig"
+        return (
+          <span className="font-bold text-lg">ig</span>
+        )
       case "twitter":
-        return "t"
+        return (
+          <span className="font-bold text-lg">t</span>
+        )
       default:
-        return "?"
+        return (
+          <span className="font-bold text-lg">?</span>
+        )
     }
   }
 
@@ -159,20 +180,20 @@ export function SocialMediaFeed() {
       <div className="text-center">
         <div className="flex justify-center gap-4">
           <Button variant="outline" asChild>
-            <a href="https://facebook.com/dominioncity" target="_blank" rel="noopener noreferrer">
+            <a href="https://web.facebook.com/profile.php?id=61552525027917" target="_blank" rel="noopener noreferrer">
               Follow on Facebook
             </a>
           </Button>
           <Button variant="outline" asChild>
-            <a href="https://instagram.com/dominioncity" target="_blank" rel="noopener noreferrer">
+            <a href="https://instagram.com/dc_workslayout" target="_blank" rel="noopener noreferrer">
               Follow on Instagram
             </a>
           </Button>
-          <Button variant="outline" asChild>
+          {/* <Button variant="outline" asChild>
             <a href="https://twitter.com/dominioncity" target="_blank" rel="noopener noreferrer">
               Follow on Twitter
             </a>
-          </Button>
+          </Button> */}
         </div>
       </div>
     </div>

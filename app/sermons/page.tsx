@@ -10,7 +10,7 @@ export default function SermonsPage() {
     {
       id: 1,
       title: "Walking in Your Purpose",
-      speaker: "Pastor John Adebayo",
+      speaker: "pastor Uzone Akalonu",
       date: "March 10, 2024",
       series: "Discovering God's Plan",
       duration: "45 min",
@@ -31,7 +31,7 @@ export default function SermonsPage() {
     {
       id: 3,
       title: "Faith Over Fear",
-      speaker: "Pastor John Adebayo",
+      speaker: "pastor Uzone Akalonu",
       date: "February 25, 2024",
       series: "Overcoming Challenges",
       duration: "42 min",
@@ -51,7 +51,7 @@ export default function SermonsPage() {
     {
       id: 5,
       title: "Generosity and Blessing",
-      speaker: "Pastor John Adebayo",
+      speaker: "pastor Uzone Akalonu",
       date: "February 11, 2024",
       series: "Kingdom Principles",
       duration: "40 min",
@@ -189,7 +189,7 @@ export default function SermonsPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
-                    <div className="text-sm">Pastor John Adebayo</div>
+                    <div className="text-sm">pastor Uzone Akalonu</div>
                     <div className="text-sm">Pastor Grace Adebayo</div>
                     <div className="text-sm">Pastor David Okafor</div>
                     <div className="text-sm">Guest Speakers</div>

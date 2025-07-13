@@ -15,7 +15,7 @@ export default function MinistriesPage() {
       image: "/placeholder.svg?height=200&width=400",
       ageGroup: "Ages 0-12",
       meetingTime: "Sundays 10:30 AM",
-      leader: "Mrs. Ruth Okonkwo",
+      leader: "Isaac Shiphra",
     },
     {
       id: 2,
