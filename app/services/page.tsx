@@ -9,7 +9,7 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="relative h-[400px] bg-gradient-to-r from-blue-900 to-purple-900 text-white">
         <div className="absolute inset-0 bg-black/40" />
-        <Image src="/placeholder.svg?height=400&width=1200" alt="Worship service" fill className="object-cover" />
+        <Image src="/images/bg.jpg?height=400&width=1200" alt="Worship service" fill className="object-cover" />
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-bold mb-4">Worship Services</h1>
@@ -200,14 +200,13 @@ export default function ServicesPage() {
                   <div>
                     <h4 className="font-semibold">Address</h4>
                     <p className="text-gray-600">
-<<<<<<< HEAD
+
  cradle Hotel, works layout, Owerri municipal                       <br />
                       Imo State, Nigeria
-=======
+
                       cradle Hotel, works layout, Owerri municipal 
                       <br />
                       IMO State, Nigeria
->>>>>>> 4f0fd95a477bba8160278780862306cfd82996ad
                     </p>
                   </div>
                   <div>

@@ -109,9 +109,9 @@ class AdminStorage {
       pastors: [
         {
           id: "1",
-          name: "Pastor John Adebayo",
+          name: "Pastor Uzone Akalonu",
           title: "Senior Pastor & Founder",
-          bio: "Pastor John has been leading Dominion City since its inception. With over 20 years of ministry experience, he is passionate about developing leaders and building strong communities.",
+          bio: "Pastor Uzine has been leading Dominion City since its inception. With over 15 years of ministry experience, he is passionate about developing leaders and building strong communities.",
           image: "/placeholder.svg?height=300&width=300",
           email: "pastor@dominioncity.org",
           phone: "+234 803 123 4567",

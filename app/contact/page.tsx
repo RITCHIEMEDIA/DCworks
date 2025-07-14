@@ -70,11 +70,11 @@ export default function ContactPage() {
   }
 
   const handleCallClick = () => {
-    window.location.href = "tel:+2348031234567"
+    window.location.href = "tel:+2348125119785"
   }
 
   const handleEmailClick = () => {
-    window.location.href = "mailto:info@dominioncity.org"
+    window.location.href = "mailto:dominioncityworkslayout@gmail.com"
   }
 
   const handleDirectionsClick = () => {
@@ -163,7 +163,7 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  97 Works Layout
+                  Cradle Hotel, Works Layout
                   <br />
                   Owerri Municipal, Owerri
                   <br />
@@ -225,7 +225,7 @@ export default function ContactPage() {
                   <Button
                     size="sm"
                     variant="outline"
-                    onClick={() => copyToClipboard("+2348031234567", "phone")}
+                    onClick={() => copyToClipboard("+2348125119785", "phone")}
                     className="w-full touch-manipulation"
                   >
                     {copied === "phone" ? (
@@ -252,7 +252,7 @@ export default function ContactPage() {
               <CardContent>
                 <div className="space-y-2 text-gray-600 mb-4">
                   <p>
-                    <strong>General:</strong> info@dominioncity.org
+                    <strong>General:</strong> dominioncityworkslayout@gmail.com
                   </p>
                   <p>
                     <strong>Pastor:</strong> pastor@dominioncity.org

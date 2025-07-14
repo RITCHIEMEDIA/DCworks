@@ -12,7 +12,7 @@ export interface SEOData {
 }
 
 export function generateMetadata(seo: SEOData) {
-  const baseUrl = "https://dominioncityworks.org"
+  const baseUrl = "https://dcworkslayout.vercel.app"
   const defaultImage = `${baseUrl}/images/og-default.jpg`
 
   return {
@@ -69,32 +69,32 @@ export function generateChurchStructuredData() {
     alternateName: "Dominion City Works",
     description:
       "A place where lives are transformed, communities are built, and greatness is cultivated through faith, love, and service.",
-    url: "https://dominioncityworks.org",
-    logo: "https://dominioncityworks.org/images/logo.png",
-    image: "https://dominioncityworks.org/images/church-building.jpg",
-    telephone: "+234-803-123-4567",
-    email: "info@dominioncityworks.org",
+    url: "https://dcworkslayout.vercel.app",
+    logo: "https://dcworkslayout.vercel.app/images/image.jpg",
+    image: "https://dcworkslayout.vercel.app/images/pee.jpg",
+    telephone: "+234 812 511 9785",
+    email: "dominioncityworkslayout@gmail.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "97 Works Layout",
-      addressLocality: "Owerri Municipal",
+      streetAddress: "Cradle Event Hall, Cradle Hotel",
+      addressLocality: " works layout. Owerri Municipal",
       addressRegion: "Imo State",
       postalCode: "460001",
       addressCountry: "NG",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 5.484,
-      longitude: 7.0351,
+      latitude: 5.4966,
+      longitude:  7.0353,
     },
     openingHours: ["Su 08:00-12:30", "Su 18:00-19:30", "We 19:00-20:30", "Fr 19:00-21:00"],
     founder: {
       "@type": "Person",
-      name: "Pastor John Adebayo",
+      name: "Pastor Uzone Akalonu",
     },
     sameAs: [
-      "https://facebook.com/dominioncityworks",
-      "https://instagram.com/dominioncityworks",
+      "https://facebook.com/profile.php?id=61552525027917s",
+      "https://instagram.com/dc_workslayout",
       "https://twitter.com/dominioncityworks",
       "https://youtube.com/dominioncityworks",
     ],
@@ -148,7 +148,7 @@ export function generateEventStructuredData(event: any) {
     organizer: {
       "@type": "Organization",
       name: "Dominion City Works Layout",
-      url: "https://dominioncityworks.org",
+      url: "https://dcworkslayout.vercel.app",
     },
     offers: {
       "@type": "Offer",
@@ -177,7 +177,7 @@ export function generateArticleStructuredData(article: any) {
       name: "Dominion City Works Layout",
       logo: {
         "@type": "ImageObject",
-        url: "https://dominioncityworks.org/images/logo.png",
+        url: "https://dcworkslayout.vercel.app/images/pee.jpg",
       },
     },
     datePublished: article.date,

@@ -222,7 +222,7 @@ title: "Supernatural Advancements",
 
           <Card className="max-w-4xl mx-auto">
             <CardHeader>
-              <CardTitle className="text-center">March 2024</CardTitle>
+              <CardTitle className="text-center"> July 2025</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center">

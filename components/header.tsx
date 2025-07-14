@@ -21,11 +21,11 @@ export function Header() {
   }, [])
 
   const handleCallClick = () => {
-    window.location.href = "tel:+2348031234567"
+    window.location.href = "tel:+2348125119785"
   }
 
   const handleDirectionsClick = () => {
-    const address = "97 Works Layout, Owerri Municipal, Owerri, Imo State, Nigeria"
+    const address = "Cradle Event Hall, Cradle Hotel, works layout, Owerri Municipal, Owerri, Imo State, Nigeria"
     const encodedAddress = encodeURIComponent(address)
     window.open(`https://maps.google.com/maps?q=${encodedAddress}`, "_blank")
   }
